@@ -27,4 +27,8 @@ jobs:
       
       - name: aaa
         run: |
-          curl -X POST -H "Accept: application/vnd.github.inertia-preview+json" https://api.github.com/repos/ott-s/sample/issues -d '{"title":"test2", "body":"detail"}'
+          curl -X POST \
+          -H "Accept: application/vnd.github.inertia-preview+json" \
+          -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/ott-s/sample/issues \
+          -d '{"title":"test3", "body":"detail"}'
